@@ -68,3 +68,33 @@ kontakty['Mark Zuckerberg'] = 333111222
 kontakty['Krzysztof Krawczyk'] = 444555666
 
 print(sorted(kontakty.items(), reverse=True))
+
+loginy = {
+    'karmel':'Karmel2',
+    'admin':'admin',
+    'moderator':'moderator',
+    'bastekmisiek02':'MasloHaslo123',
+    'Bobr20_02':'HasloMaslo321',
+    'adamw':'WAdam5'
+}
+
+i = input("Podaj login: ")
+j = input("Podaj hasło: ")
+try:
+    if i == 'admin' and j == loginy[i]:
+        print("Witamy w panelu admina")
+    elif j != loginy[i]:
+        print("Wprowadzono błędne hasło")
+    else:
+        print('Witamy na stronie internetowej, która na pewnie nie jest panelem admina')
+except KeyError:
+    print("Nieznana nazwa użytkownika")
+    
+email = {
+    0: 'sample@sample.com'
+}
+
+mail = input('Podaj adres email: ')
+count = 0
+for i in email:
+    
