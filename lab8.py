@@ -33,8 +33,38 @@ for key, value in dict(menu).items():
         if value == countdown or value == countup:
             del menu[key]
 
-menu['pizza'] =  19.99
+menu['pizza'] = 19.99
 for i in menu.items():
     print(i)
 
+kontakty = {
+    'Steve Jobs': 111222333,
+    'Bill Gates': 123123123,
+    'Kanye West': 222111333,
+    'Dwayne Johnson': 333111222,
+    'Donald Trump': 333222111,
+    'Joe Biden': 321321321,
+    'Krzysztof Krawczyk': 213213213,
+    'Mark Zuckerberg': 444555666,
+    'Arnold Schwarzenegger': 456456456,
+    'Amber Heard': 654654654,
+}
 
+kontakty['Johnny Depp'] = kontakty['Amber Heard']
+del kontakty['Amber Heard']
+kontakty['Steve Wozniak'] = kontakty['Steve Jobs']
+del kontakty['Steve Jobs']
+
+for i in dict(kontakty):
+    if i != 'Johnny Depp' and i != 'Steve Wozniak':
+        del kontakty[i]
+
+for i in kontakty.items():
+    print(i)
+
+kontakty.clear()
+
+kontakty['Mark Zuckerberg'] = 333111222
+kontakty['Krzysztof Krawczyk'] = 444555666
+
+print(sorted(kontakty.items(), reverse=True))
