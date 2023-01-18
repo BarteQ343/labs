@@ -90,11 +90,32 @@ try:
 except KeyError:
     print("Nieznana nazwa użytkownika")
     
-email = {
-    0: 'sample@sample.com'
-}
-
+email = {0:'',}
+file = open("emails.txt", "r")
+ln = 0
+for x in file:
+    email[ln] = x
+    ln = ln + 1 
+    #odczyt tablicy z pliku i wpisanie wartości do kodu
+file.close()
 mail = input('Podaj adres email: ')
 count = 0
-for i in email:
-    
+for i in email.keys():
+    if i >= count:
+        count = i
+count = count + 1
+
+email[count] = mail
+# zapisanie tablicy do pliku:
+file = open("emails.txt", "a")
+for ln in range(ln,count+1):
+    if ln == 0:
+        file.write(email[ln])
+    else:
+        file.write(email[ln])
+        file.write('\n')
+    ln = ln + 1 
+file.close()
+for i,j in email.items():
+    email[i] = j.rstrip()
+print(email)
